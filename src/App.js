@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Main from './components/MainComponent'
-import Menu from './components/MenuComponents';
+import Main from './components/MainComponent';
 
 
 class App extends Component {
