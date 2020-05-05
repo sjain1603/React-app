@@ -27,17 +27,17 @@ class Header extends Component {
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className="mr-10" href="/">
-                            <img src="assets/images/logo.png" height="33"  width="45" alt="Ristorante Con Fusion" />
+                            <img src="assets/images/logo.png" height="40"  width="50" alt="Ristorante Con Fusion" />
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                                 <NavItem className="mr-3">
-                                    <NavLink classNam="nav-link" to="'/home">
+                                    <NavLink classNam="nav-link" to="/home">
                                         <span className = "fa fa-home fa-lg"></span> Home 
                                     </NavLink>
                                 </NavItem>
                                 <NavItem className="mr-3">
-                                    <NavLink classNam="nav-link" to="'/aboutus">
+                                    <NavLink classNam="nav-link" to="/aboutus">
                                         <span className = "fa fa-info fa-lg"></span> About Us 
                                     </NavLink>
                                 </NavItem>
@@ -47,7 +47,7 @@ class Header extends Component {
                                     </NavLink>
                                 </NavItem>
                                 <NavItem className="mr-3">
-                                    <NavLink classNam="nav-link" to="'/contactus">
+                                    <NavLink classNam="nav-link" to="/contactus">
                                         <span className = "fa fa-address-card fa-lg"></span> Contact Us
                                     </NavLink>
                                 </NavItem>
