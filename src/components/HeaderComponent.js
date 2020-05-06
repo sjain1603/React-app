@@ -31,23 +31,23 @@ class Header extends Component {
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
-                                <NavItem className="mr-3">
-                                    <NavLink classNam="nav-link" to="/home">
+                                <NavItem className="mr-10">
+                                    <NavLink className="nav-link" to="/home">
                                         <span className = "fa fa-home fa-lg"></span> Home 
                                     </NavLink>
                                 </NavItem>
-                                <NavItem className="mr-3">
-                                    <NavLink classNam="nav-link" to="/aboutus">
+                                <NavItem className="mr-10">
+                                    <NavLink className="nav-link" to="/aboutus">
                                         <span className = "fa fa-info fa-lg"></span> About Us 
                                     </NavLink>
                                 </NavItem>
-                                <NavItem className="mr-3">
-                                    <NavLink classNam="nav-link" to="/menu">
+                                <NavItem className="mr-10">
+                                    <NavLink className="nav-link" to="/menu">
                                         <span className = "fa fa-list fa-lg"></span> Menu
                                     </NavLink>
                                 </NavItem>
-                                <NavItem className="mr-3">
-                                    <NavLink classNam="nav-link" to="/contactus">
+                                <NavItem className="mr-10">
+                                    <NavLink className="nav-link" to="/contactus">
                                         <span className = "fa fa-address-card fa-lg"></span> Contact Us
                                     </NavLink>
                                 </NavItem>
