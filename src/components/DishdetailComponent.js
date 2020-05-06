@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
     function RenderDish({dish}) {
         if(dish!=null) {
             return (
-                <div className="col-12 col-md-5 m-1">
+                <div className="col-md-5 m-1">
                     <Card>
                         <CardImg top src={dish.image} alt={dish.name}/>
                         <CardBody>
@@ -27,7 +27,7 @@ import {Link} from 'react-router-dom';
     function RenderComments({comments}) {
         if(comments != null){
             return (
-                <div className="col-12 col-md-5 m-1">
+                <div className="col-md-5 m-1">
                     <h4>Comments</h4>
                     <ul className="list-unstyled">                    
                         {comments.map((comment) => {
@@ -64,6 +64,7 @@ import {Link} from 'react-router-dom';
             <div className="container">
                 <div className="row">
                     <Breadcrumb>
+                    <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                         <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
                         <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
                     </Breadcrumb>
