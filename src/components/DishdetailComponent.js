@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useCallback } from "react";
 import {
   Card,
   CardImg,
@@ -32,24 +32,33 @@ function RenderDish(dishDetail) {
   );
 }
 
-function RenderComments(comments) {
-  let commentList = comments.comments.map((comment, i) => (
-    <li key={i} className="commentList">
-      {comment.comment}
-      <br />
-      <br />
-      -- {comment.author},
-      {new Intl.DateTimeFormat("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "2-digit"
-      }).format(new Date(Date.parse(comment.date)))}
-      <br />
-      <br />
-    </li>
-  ));
-  commentList.push(<CommentForm></CommentForm>);
-  return commentList;
+function RenderComments({comments, addComment, dishId}) {
+  var commentList = comments.map(comment => {
+    return (
+        <li key={comment.id} >
+            {comment.comment}
+            <br /><br />
+            -- {comment.author}, {new Intl.DateTimeFormat("en-US", {
+              year:"numeric",
+              month:"long",
+              day:"2-digit"
+            }).format(new Date(comment.date))}
+            <br /><br />
+        </li>
+    );
+});
+
+return (
+    <div>
+        <h4>Comments</h4>
+        <ul className="list-unstyled">
+            {commentList}
+        </ul>
+        <CommentForm dishId={dishId} addComment={addComment} />
+        <br/ >
+    </div>
+);
+  
 }
 
 const DishDetail = props => {
@@ -72,7 +81,9 @@ const DishDetail = props => {
           <RenderDish {...props.dish} />
         </div>
         <div className="col-12 col-md-5 m-1">
-          <RenderComments comments={props.comments} />
+          <RenderComments comments={props.comments} 
+            addComment={props.addComment}
+            dishId={props.dish.id}  />
         </div>
       </div>
     </div>
@@ -100,8 +111,8 @@ class CommentForm extends Component {
     });
   }
   submitComment(values) {
-    console.log("Current State is: " + JSON.stringify(values));
-    alert("Current State is: " + JSON.stringify(values));
+    this.toggleModal();
+    this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
   }
   render() {
     return (
@@ -140,9 +151,9 @@ class CommentForm extends Component {
                 </Label>
                 <Col md={12}>
                   <Control.text
-                    model=".name"
-                    id="name"
-                    name="name"
+                    model=".author"
+                    id="author"
+                    name="author"
                     placeholder="Author Name"
                     className="form-control"
                     validators={{
