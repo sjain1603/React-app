@@ -3,13 +3,14 @@ import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbIte
 import { Link } from "react-router-dom";
 import { Control, LocalForm, Errors } from "react-redux-form";
 import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
 
 // import CommentForm from "./CommentFormComponent";
 
 function RenderDish(dishDetail) {
   return (
     <Card>
-      <CardImg top src={dishDetail.image} alt={dishDetail.name} />
+      <CardImg top src={baseUrl + dishDetail.image} alt={dishDetail.name} />
       <CardBody>
         <CardTitle>{dishDetail.name}</CardTitle>
         <CardText>{dishDetail.description}</CardText>
@@ -40,7 +41,7 @@ return (
         <ul className="list-unstyled">
             {commentList}
         </ul>
-        <CommentForm dishId={dishId} addComment={addComment} />
+        <CommentForm dishId={dishId} addComment={addComment}  />
         <br/ >
     </div>
 );

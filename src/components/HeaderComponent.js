@@ -39,7 +39,7 @@ class Header extends Component {
 
         return (
             <>
-                <Navbar dark expand="md">
+                <Navbar dark expand="md">   
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className="mr-10" href="/">
@@ -84,7 +84,7 @@ class Header extends Component {
                             <div className="col-12 col-sm-6">
                                 <h1>Ristorante Con Fusion</h1>
                                 <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
-                            </div>
+                            </div>  
                         </div>
                     </div>
                 </Jumbotron>
